@@ -51,27 +51,27 @@ function initQuiz() {
 function showQuizResult(answer, resultElement) {
     const responses = {
         fossil: {
-            text: "Combustibilii fosili sunt sursa predominantă de energie în România, dar acestea contribuie semnificativ la poluare. Hai să explorăm împreună alternativele verzi! 💚",
+            text: "Fossil fuels are the predominant energy source in Romania, but they contribute significantly to pollution. Let's explore green alternatives together! 💚",
             emoji: "🏭"
         },
         solar: {
-            text: "Extraordinar! 🌟 Folosești energie solară! Ești un pionier al energiei curate. Panourile solare sunt viitorul energiei sustenabile!",
+            text: "Excellent! 🌟 You're using solar energy! You are a pioneer of clean energy. Solar panels are the future of sustainable energy!",
             emoji: "☀️"
         },
         wind: {
-            text: "Fantastic! 💨 Energia eoliană este una dintre cele mai curate surse de energie. Contribui activ la protejarea planetei!",
+            text: "Fantastic! 💨 Wind energy is one of the cleanest energy sources. You actively contribute to protecting the planet!",
             emoji: "🌬️"
         },
         hydro: {
-            text: "Foarte bine! 💧 Energia hidro este o sursă regenerabilă importantă. România are un potențial hidro semnificativ!",
+            text: "Very good! 💧 Hydro energy is an important renewable source. Romania has significant hydro potential!",
             emoji: "💦"
         },
         mixed: {
-            text: "Bine! ⚡ Un mix energetic este realitatea multor gospodării. Important este să creștem ponderea surselor regenerabile!",
+            text: "Good! ⚡ An energy mix is the reality of many households. The important thing is to increase the share of renewable sources!",
             emoji: "🔋"
         },
         unknown: {
-            text: "Nu-i problemă! ❓ E important să începi să te informezi. Verifică factura de energie sau întreabă furnizorul tău!",
+            text: "No problem! ❓ It's important to start informing yourself. Check your energy bill or ask your provider!",
             emoji: "📊"
         }
     };
@@ -100,7 +100,7 @@ function addPromise() {
     const promise = promiseInput.value.trim();
 
     if (!name || !promise) {
-        alert('Te rog completează ambele câmpuri! 📝');
+        alert('Please fill in both fields! 📝');
         return;
     }
 
@@ -124,7 +124,7 @@ function addPromise() {
     promiseInput.value = '';
 
     // Show success message
-    showMessage('Promisiunea ta a fost adăugată! 🌱', 'success');
+    showMessage('Your promise has been added! 🌱', 'success');
 
     // Scroll to the new promise
     promiseCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -163,15 +163,15 @@ function loadPromises() {
 // Share functionality
 function shareMuseum() {
     const shareData = {
-        title: 'Muzeul Verde - O călătorie pentru Planetă',
-        text: 'Descoperă Muzeul Verde creat de elevii Liceului Tehnologic Nicolae Titulescu! Un proiect despre protejarea mediului. 🌍🌱',
+        title: 'The Green Museum - A Journey for the Planet',
+        text: 'Discover The Green Museum created by students of Liceul Tehnologic "Nicolae Titulescu" Medgidia! A project about environmental protection. 🌍🌱',
         url: window.location.href
     };
 
     if (navigator.share) {
         navigator.share(shareData)
-            .then(() => showMessage('Mulțumim pentru distribuire! 🌟', 'success'))
-            .catch(() => showMessage('Distribuirea a fost anulată.', 'info'));
+            .then(() => showMessage('Thank you for sharing! 🌟', 'success'))
+            .catch(() => showMessage('Sharing was cancelled.', 'info'));
     } else {
         // Fallback for browsers that don't support Web Share API
         copyLink();
@@ -189,9 +189,9 @@ function copyLink() {
 
     try {
         document.execCommand('copy');
-        showMessage('Link copiat în clipboard! 📋 Distribuie-l cu prietenii tăi!', 'success');
+        showMessage('Link copied to clipboard! 📋 Share it with your friends!', 'success');
     } catch (err) {
-        showMessage('Nu s-a putut copia linkul. Încearcă din nou.', 'error');
+        showMessage('Could not copy link. Please try again.', 'error');
     }
 
     document.body.removeChild(tempInput);
@@ -376,6 +376,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Log visitor (optional - for demonstration)
-console.log('%c🌱 Bine ai venit la Muzeul Verde! 🌍', 'color: #4CAF50; font-size: 20px; font-weight: bold;');
-console.log('%cProiect realizat de elevii Liceului Tehnologic Nicolae Titulescu, Medgidia', 'color: #2e7d32; font-size: 14px;');
-console.log('%cPlatform: ETwinning | Proiect: Green Routinators', 'color: #558b2f; font-size: 12px;');
+console.log('%c🌱 Welcome to The Green Museum! 🌍', 'color: #4CAF50; font-size: 20px; font-weight: bold;');
+console.log('%cProject created by students of Liceul Tehnologic "Nicolae Titulescu" Medgidia', 'color: #2e7d32; font-size: 14px;');
+console.log('%cPlatform: eTwinning | Project: Green Routinators', 'color: #558b2f; font-size: 12px;');
